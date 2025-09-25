@@ -53,10 +53,12 @@ Documented simple fixes (patching, updating software, disabling unnecessary serv
 Collected evidence with screenshots.
 
 Scan findings:
-| Severity   | Count | Example Vulnerability (CVE)                   | Solution                       |
+| Severity   | Count | Example Vulnerability (CVE)                   | exploitation     | Solution                       | 
 |------------|-------|-----------------------------------------------|--------------------------------|
-| Critical   | 1     | Oracle Database Unsupported Version Detection | Upgrade to a version of Oracle Database that is currently supported. |
-| High       | 3     | Outdated OpenSSL Version                      | Upgrade required               |
+| Critical   | 1     | Oracle Database Unsupported Version Detection | Unsupported Oracle versions no longer receive security patches. Attackers can exploit known vulnerabilities in these versions. | Upgrade to a version of Oracle Database that is currently supported. |
+| High       | 1    |        Oracle TNS Listener Remote Poisoning| The TNS Listener listens on port 1521 (default) and handles incoming Oracle client connections.
+
+Remote Poisoning occurs when an attacker sends crafted requests to the listener            | Apply the workaround in Oracle's advisory.             |
 | Medium     | 5     | Weak SSH Cipher Suites                        | Disable weak ciphers           |
 | Low        | 8     | Missing HTTP Security Headers                 | Best practice fix              |
 
