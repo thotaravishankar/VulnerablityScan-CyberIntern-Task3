@@ -53,15 +53,12 @@ Documented simple fixes (patching, updating software, disabling unnecessary serv
 Collected evidence with screenshots.
 
 Scan findings:
-| Severity   | Count | Example Vulnerability (CVE)                   | exploitation     | Solution                       | 
-|------------|-------|-----------------------------------------------|--------------------------------|
-| Critical   | 1     | Oracle Database Unsupported Version Detection | Unsupported Oracle versions no longer receive security patches. Attackers can exploit known vulnerabilities in these versions. | Upgrade to a version of Oracle Database that is currently supported. |
-| High       | 1    |        Oracle TNS Listener Remote Poisoning| The TNS Listener listens on port 1521 (default) and handles incoming Oracle client connections.
-
-Remote Poisoning occurs when an attacker sends crafted requests to the listener            | Apply the workaround in Oracle's advisory.             |
-| Medium     | 5     | Weak SSH Cipher Suites                        | Disable weak ciphers           |
-| Low        | 8     | Missing HTTP Security Headers                 | Best practice fix              |
-
+| Severity | Count | Example Vulnerability (CVE)                   | Exploitation                                                                                   | Solution                                                                                                    |
+|----------|-------|-----------------------------------------------|------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| Critical | 1     | Oracle Database Unsupported Version Detection | Unsupported Oracle versions no longer receive security patches. Attackers can exploit known vulnerabilities in these versions. | Upgrade to a version of Oracle Database that is currently supported.                                       |
+| High     | 1     | Oracle TNS Listener Remote Poisoning          | The TNS Listener listens on port 1521 (default) and handles incoming Oracle client connections. Remote Poisoning occurs when an attacker sends crafted requests to the listener. | Apply the workaround in Oracle's advisory.                                                                |
+| Medium   | 1     | SMB Signing not required                      | An attacker can perform man-in-the-middle attacks.                                             | Enforce message signing in the host's configuration. On Windows, this is found in the policy setting 'Microsoft network server: Digitally sign communications (always)'. On Samba, the setting is called 'server signing'. See the 'see also' links for further details. |
+| Low      | 9     | Missing HTTP Security Headers                 | Content type attacks, execution of malicious scripts.                                          | Apply best practice fixes, e.g., add security headers (CSP, X-Frame-Options, X-Content-Type-Options, HSTS). |
 
 
 Mitigation / Remediation Ideas:
