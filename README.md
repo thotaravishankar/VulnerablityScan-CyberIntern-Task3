@@ -61,14 +61,6 @@ Scan findings:
 | Low      | 9     | Missing HTTP Security Headers                 | Content type attacks, execution of malicious scripts.                                          | Apply best practice fixes, e.g., add security headers (CSP, X-Frame-Options, X-Content-Type-Options, HSTS). |
 
 
-Mitigation / Remediation Ideas:
 
-Critical: Disable SMBv1, apply Microsoft security patch.
-
-High: Update OpenSSL, Apache, or other outdated software.
-
-Medium: Reconfigure SSH/HTTP settings to use stronger ciphers/headers.
-
-Low: Apply general system hardening.
 
 
